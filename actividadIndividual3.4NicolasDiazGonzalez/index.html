@@ -28,17 +28,28 @@
     
     section {
       padding: 20px;
+    }    
+
+    /* una columna para menor a 600px */
+    @media (max-width: 600px) {
+      section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
     }
-    
-    @media (min-width: 600px) {
+
+
+    /* dos columnas entre 800px y 1199px */
+    @media (min-width: 800px) {
       section {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 20px;
       }
     }
-    
-    @media (min-width: 900px) {
+        /* tres columnas para mayor a 1200px */
+    @media (min-width: 1200px) {
       section {
         grid-template-columns: repeat(3, 1fr);
       }
@@ -137,9 +148,9 @@
       <article>
         <h3>Redes Sociales</h3>
         <ul>
-          <li><a href="https://www.linkedin.com">LinkedIn</a></li>
-          <li><a href="https://github.com">GitHub</a></li> 
-          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          <li><a href="https://www.github.com">Github</a></li>
+          <li><a href="https://www.twitter.com/">Twitter</a></li>
         </ul>
       </article>
     
