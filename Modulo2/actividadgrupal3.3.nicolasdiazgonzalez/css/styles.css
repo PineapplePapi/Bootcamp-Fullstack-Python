@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fcdc8f;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    background-size: auto;
+}
+
+main {
+    margin: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.titulocompleto {
+    background-image: url('/Modulo2/actividadgrupal3.3.nicolasdiazgonzalez/assets/Baner2.png');
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    padding: 20px;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0); /* Transparente */
+    display: block;
+}
+
+.logofenix{
+    display: none;
+}
+
+.subtitulo {
+    background-image: url('/Modulo2/actividadgrupal3.3.nicolasdiazgonzalez/assets/fenix.png');
+    font-family: 'Lobster', cursive;
+    color: #000000;
+    padding: 20px; 
+    background-size: auto;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+footer{
+    background-color: #f582ae;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.containerizquierda {
+    background-color: #f582ae;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 5px;
+}
+
+.containerizquierda:hover {
+    background-color: #df4882;
+    animation: moverse 0.5s ease-in-out;
+}
+
+.seccion-1-top {
+    text-align: center;
+}
+
+.seccion-1-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+}
+
+.reseña {
+    border: 1px solid black;
+}
+
+.seccion2 {
+    background-color: #f582ae;
+    border: 3px solid black;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    text-align: justify;
+    margin-left: 30px 5px;
+}
+
+.seccion2:hover {
+    background-color: #df4882;
+    animation: moverse 0.5s ease-in-out;
+}
+
+article.seccion2 ul {
+    padding-left: 20px; /* Para que los puntitos de los ul queden dentro del border */
+    margin-bottom: 20px; 
+}
+
+.parrafito {
+    font-size: 12px;
+}
+
+article h3 {
+    text-align: center;
+}
+
+.container2 {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.container2 a {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .titulocompleto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    h1{
+        display: none;
+    }
+
+    .logofenix{
+        display: block;
+    }
+
+    .subtitulo{
+        background-image: none;
+    }
+
+    .container1 {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 20px;
+    }
+    footer{
+        background-color: #f582ae;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        text-align: center;
+        align-items: center;
+    }
+    .redes{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    iframe{
+        width: 200px;
+        height: 200px;
+    }
+  }
+
+a img:hover {
+    animation: moverse2 0.5s ease-in-out;
+}
+
+a i:hover {
+    animation: moverse2 0.5s ease-in-out;
+}
+
+  @keyframes moverse { /* definimos moverse, para que los cuadros containerizquierda y seccion2 se muevan cada vez que pasamos el cursor por encima */
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(0, -5px);
+    }
+    75% {
+      transform: translate(0, 5px);
+    }
+}
+
+@keyframes moverse2 { /* moverse2 para los logos de las marcas y redes sociales */
+    0%, 100% {
+      transform: translate(-10px, 1px);
+    }
+    25% {
+      transform: translate(5px, -5px);
+    }
+    75% {
+      transform: translate(5px, 5px);
+    }
+}
+

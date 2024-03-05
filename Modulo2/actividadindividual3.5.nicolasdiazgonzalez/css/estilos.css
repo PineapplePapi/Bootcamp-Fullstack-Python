@@ -1,0 +1,38 @@
+section {
+    padding: 20px;
+  }    
+
+
+/* nth-child, posición relativa respecto a sus pares, como arbol (?), para separarlos, aunque no es necesario.
+También la forma > para referirme a una etiqueta dentro de otra, si son varias igual, van enumeradas con parentesis (1), (2), (3) por ejemplo. */
+main > section > article:nth-child(1),
+main > section > article:nth-child(2),
+main > section > article:nth-child(3),
+main > section > article:nth-child(4),
+main > section > article:nth-child(5),
+main > section > article:nth-child(6) {
+  position: relative;
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  font-family: 'Arial', sans-serif; 
+}
+
+main > section > article:hover { /* hover, cuando el cursor de mouse pasa por encima, hace algo, cambiar de color y moverse */
+  background-color: #ff7cf2;
+  animation: moverse 0.5s ease-in-out;
+}
+
+@keyframes moverse { /* definimos moverse, para que los cuadros article se muevan cada vez que pasamos el cursor por encima */
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(0, -5px);
+  }
+  75% {
+    transform: translate(0, 5px);
+  }
+}

@@ -1,0 +1,203 @@
+<!-- Pregunta adicional: Describa cuál es el efecto de cambiar la propiedad
+box-sizing en nuestra hoja de estilos, desde border-box a content-box. ¿A
+qué se deben las diferencias presentadas y cuál prefiere utilizar? Se
+recomienda utilizar la interfaz para visualización de Box Model de las
+herramientas de desarrollador de su navegador.
+
+box-sizing determina como se calcula el tamaño total de un elemento, por ejemplo, si se incluye el padding y border.
+Existen dos tipos, 
+      * contet-box : El valor total del elemento en el que no inlcuye el padding y el border y se añade despues.
+      * border-box : El valor total del elemento en el que se incluye el padding y el border.
+
+Preferimos utilizar el border-box para especificar tamaños totales para que sea mas fácil manejar el diseño y  las dimensiones de los elemento en la página. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Modulo2/actividadgrupal3.3.nicolasdiazgonzalez/css/styles.css">
+    <script
+    src="https://kit.fontawesome.com/63a26b38d6.js"
+    crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cambria:wght@400&family=Cochin:wght@400&family=Georgia:wght@400&family=Times:wght@400&family=Times+New+Roman:wght@400&display=swap">
+
+</head>
+<body>
+    <header>
+      <div class="titulocompleto">
+        <h1 class="titulo">
+          Fénix Store
+      </h1>
+      <img src="/Modulo2/actividadgrupal3.3.nicolasdiazgonzalez/assets/fenix.png" alt="" class="logofenix">
+      <div>
+        <h2 class="subtitulo">
+          Renace a un estilo único
+      </h2>
+      </div>
+      </div>
+    </header>
+    <main>
+        <section class="container1">
+            <article class="containerizquierda">
+                <div class="seccion-1-top">
+                    <p>
+                        **Somos un servicio 5 estrella, aunque no necesariamente las 5 estrellas se aplican a nuestros productos o servicios, saludos cordiales**
+                    </p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="5-star-product-quality" width="100px"><g data-name="5-star product quality"><path d="M41.71 22.29C41.25 21.84 43.57 22 7 22a1.05 1.05 0 0 0-.71.29C-.17 28.76-.27 28.54.08 29.38S.83 30 6 30V47a1 1 0 0 0 1 1H41a1 1 0 0 0 1-1V30c5.27 0 5.58.2 5.92-.62S48.2 28.78 41.71 22.29zM7.41 24h7.18l-4 4H3.41zM8 30c3.26 0 3.32.09 3.71-.29L16 25.41V46H8zM40 46H18V25.41C22.61 30 22.43 30 23 30H40zM23.41 28l-4-4H40.59l4 4zM17.17 6.33L17 5.68a1 1 0 0 0-1.9 0l-.22.65H14a1 1 0 0 0-.62 1.78l.68.55-.34 1A1 1 0 0 0 14.54 11c.58.08.87-.28 1.46-.76.65.53 1 1 1.7.71 1-.41.51-1.44.24-2.26.64-.51 1.28-.87 1-1.66S18.08 6.33 17.17 6.33zM25.17 6.33L25 5.68a1 1 0 0 0-1.9 0l-.22.65H22a1 1 0 0 0-.62 1.78l.68.55-.34 1A1 1 0 0 0 22.54 11c.58.08.87-.29 1.46-.76.65.53 1 1 1.7.71 1-.41.51-1.44.24-2.26.64-.51 1.28-.87 1-1.66S26.08 6.33 25.17 6.33zM9.17 6.33L9 5.68a1 1 0 0 0-1.9 0l-.22.65H6a1 1 0 0 0-.62 1.78l.68.55-.34 1A1 1 0 0 0 6.54 11c.58.08.87-.28 1.46-.76.65.53 1 1 1.7.71 1-.41.51-1.44.24-2.26.64-.51 1.28-.87 1-1.66S10.08 6.33 9.17 6.33zM33.17 6.33L33 5.68a1 1 0 0 0-1.9 0l-.22.65H30a1 1 0 0 0-.62 1.78l.68.55-.34 1A1 1 0 0 0 30.54 11c.57.07.86-.28 1.46-.76.65.53 1 1 1.7.71 1-.41.51-1.44.24-2.26.64-.51 1.28-.87 1-1.66S34.08 6.33 33.17 6.33zM41.17 6.33L41 5.68a1 1 0 0 0-1.9 0l-.22.65H38a1 1 0 0 0-.62 1.78l.68.55-.34 1A1 1 0 0 0 38.54 11c.57.07.86-.28 1.46-.76.65.53 1 1 1.7.71 1-.41.51-1.44.24-2.26.64-.51 1.28-.87 1-1.66S42.08 6.33 41.17 6.33z"></path><path d="M43,0H5A5,5,0,0,0,0,5v6a5,5,0,0,0,5,5H19.59l3.7,3.71a1,1,0,0,0,1.42,0L28.41,16H43a5,5,0,0,0,5-5V5A5,5,0,0,0,43,0Zm3,11a3,3,0,0,1-3,3H28c-.57,0-.43,0-4,3.59C20.4,14,20.56,14,20,14H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2H43a3,3,0,0,1,3,3Z"></path></g></svg>
+                </div>
+                <div class="seccion-1-bottom">
+                    <div class="reseña">
+                        <h4>
+                            El amable Señor de las tinieblas
+                        </h4>
+                        <p>
+                            Fenix, mi elección para tecnología asequible y de calidad, porfavor saquenme de aquí.
+                        </p>
+                    </div>
+                    <div class="reseña">
+                        <h4>
+                            Jeff Bezit0s.-
+                        </h4>
+                        <p>
+                            Fenix tiene potencial, pero necesita mejorar la velocidad de entrega y su atención al cliente.
+                        </p>
+                    </div>
+                    <div class="reseña">
+                        <h4>
+                            Elon Mus0k.-
+                        </h4>
+                        <p>
+                            Fenix será mejor que Aliexpress y Amazon, compraré acciones de inmediato! FUCK U BEZOS!
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="seccion2">
+                <h3>
+                    Beneficios de utilizar Fenix!  
+                </h3>
+                <ul>
+                    <li>
+                        <p>Rapidas entregas, en menos de 24 horas.</p>
+                        <p class="parrafito">
+                            *Solo para entregas dentro de la Región Metropolitana, no aplica para otros estados*.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Entregas seguras.</p>
+                        <p class="parrafito">
+                            *99.9 % de que no llegue el paquete, no nos hacemos responsables de robo o perdidas de paquetes*
+                        </p>
+                    </li>
+                    <li>
+                        <p>Productos de calidad.</p>
+                        <p class="parrafito">
+                            *No se puede asegurar la originalidad y procedencia de nuestros productos*
+                        </p>
+                    </li>
+                    <li>
+                        <p>Puede descargar nuestro folleto en formato PDF a continuación, aunque no aseguramos la veracidad del mismo.</p>
+                        <a href="https://www.ilovepdf.com">
+                            <img src="assets/pdf.png" alt="" width="50px" height="50px" />
+                          </a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="container2">
+            <p style="font-size: 20px;">
+                Nuestras marcas, con los productos que trabajamos, y enviamos,
+                supongo:
+              </p>
+              <a class="logos" href="https://nike.com">
+                <img
+                  src="assets/logonike.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://samsung.com">
+                <img
+                  src="assets/logosamsung.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://www.apple.com">
+                <img
+                  src="assets/logoapple.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://www.dior.com">
+                <img
+                  src="assets/logodior.png"
+                  alt=""
+                  width="150px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://www.chanel.com">
+                <img
+                  src="assets/logochanel.png"
+                  alt=""
+                  width="150px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://www.gucci.com">
+                <img
+                  src="assets/logogucci.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </a>
+              <a href="https://www.louisvuitton.com">
+                <img
+                  src="assets/logolv.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                />
+              </a>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <div class="redes">
+                <a href="https://github.com">
+                    <i class="fab fa-github-square fa-5x"></i>
+                  </a>
+                  <a href="https://twitter.com">
+                    <i class="fab fa-twitter-square fa-5x"></i>
+                  </a>
+                  <a href="https://www.linkedin.com">
+                    <i class="fab fa-linkedin fa-5x"></i>
+                  </a>
+            </div>
+            <a href="mailto:fenixlamejorempresadelmundo@correo.com"
+              >Escribenos a fenixlamejorempresadelmundo@correo.com</a
+            >
+        </section>
+        <section>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31957.181056067308!2d-70.6369553365486!3d-33.428623510987386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69d4854951%3A0x9a87ef2fefaad0df!2sCostanera%20Center!5e0!3m2!1ses!2scl!4v1707458205909!5m2!1ses!2scl"
+              width="400"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </section>
+    </footer>
+</body>
+</html>

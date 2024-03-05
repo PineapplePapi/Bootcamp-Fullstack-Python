@@ -1,0 +1,69 @@
+body {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  font-family: Arial, sans-serif;  
+  line-height: 1.5;
+}
+
+section {
+  padding: 10px 5px;
+}
+
+main {
+  border: 10px solid black;
+  border-radius: 15px;
+  padding: 10px 5px;
+}
+
+header {
+    text-align: center; 
+    background: rgb(77, 9, 116);
+    color: #fff;
+    padding: 10px 5px;
+    border-top: 10px solid black ;
+    border-left: 10px solid black;
+    border-right: 10px solid black ;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  footer{
+    text-align: center; 
+    background: rgb(77, 9, 116);
+    color: #fff;
+    padding: 10px 5px;
+    border-bottom: 10px solid black ;
+    border-left: 10px solid black;
+    border-right: 10px solid black ;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+footer section {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+    /* una columna para menor a 600px */
+    @media (max-width: 600px) {
+      section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+      }
+    }
+
+    /* dos columnas entre 800px y 1199px */
+    @media (min-width: 800px) {
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+      }
+    }
+        /* tres columnas para mayor a 1200px */
+    @media (min-width: 1200px) {
+      section {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
