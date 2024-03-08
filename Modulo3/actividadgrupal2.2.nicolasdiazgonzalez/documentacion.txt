@@ -1,0 +1,18 @@
+- Investigar y documentar sobre la creación de Módulos en Python.
+
+Un módulo en python es un archivo .py en el cual se definen distintos elementos, como funciones, variables, clases, entre otros, que se requiera su uso en otros archivos .py. 
+En este caso para la creación primero creamos la carpeta "paquetes", dentro de ella creamos el archivo "moduloprueba.py" y dentro de este archivo creamos la variable "mensaje_motivador".
+Finalmente en nuestro archivo principal importamos el paquete y la variable para poder llamarla con las siguientes líneas de código: 
+import paquete
+from paquete.moduloprueba import mensaje_motivador     
+print(mensaje_motivador)
+
+- Investigar y documentar sobre la creación de Paquetes en Python.
+
+Un paquete es una colección de módulos organizados en un directorio. Los paquetes pueden contener sub paquetes y módulos.
+Para crear en este caso el paquete el primer paso fue crear una carpeta la cual llamamos "paquete", luego creamos el archivo "__init__.py" el cual dejamos vacío.
+
+
+- Investigar e implementar el uso del archivo __init__.py
+El archivo "__init__.py" se usa para indicar que un directorio es un paquete, al crearlo dentro de un directorio (carpeta) inmediatamente aparece un directorio dentro de este con el nombre "__pycache__". Este directorio se usa para almacenar archivos de caché de bytecode complilado por razones de rendimiento.
+
