@@ -1,0 +1,95 @@
+body {
+    font-family: Times New Roman;
+}
+
+.barraderelleno {
+    display: none;
+}
+
+.titulo {
+    font-size: 60px;
+    font-family: Courier; 
+    border: 10px dashed blue;
+    background-image: url('https://images.pexels.com/photos/1227511/pexels-photo-1227511.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-clip: content-box; 
+    text-align: center;
+    border-radius: 30px;
+    margin: 40px;
+}
+
+.fecha {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.nav {
+    border: 5px solid blue;
+    border-radius: 100px;
+    font-family: Arial;
+    background-color: yellow;
+}
+
+/* Para que no se vea el nav2 en el fondo xdxd */
+.nav2 {
+    border: 5px solid white;
+    border-radius: 100px;
+    font-family: Arial;
+    background-color: white;
+}
+
+h3 {
+    font-family: Arial;
+}
+
+.panel {
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 20px;
+    text-align: left;
+}
+
+.card {
+    background-color: lightgreen ;
+}
+
+.panel p {
+    font-style: italic;
+}
+
+/* .grilla-2col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.grilla-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+
+} */
+.card:hover {
+    background: #FFF;
+    border: 2px solid #F00;
+    border-radius: 20px;
+}
+
+.panel hr {
+    border-color: gray;
+  }
+  
+.panel:hover hr {
+    border-color: #333;
+}
+
+footer {
+    font-size: 20px;
+    background-color: gray;
+    color: white;
+    font-family: Courier;
+    text-align: center;
+}
+
