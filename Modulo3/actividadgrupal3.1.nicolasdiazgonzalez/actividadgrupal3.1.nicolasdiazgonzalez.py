@@ -3,7 +3,7 @@
 # nos permitan manipular un stock de productos. Para ello debemos aplicar lo siguiente:
 # - Definir el stock de un producto en una variable. La variable será un diccionario, asi podemos manejar varios items de productos en una misma variable.
 
-productos = {'producto1': 20, 'producto2': 50, 'producto3': 15, 'producto4': 13 }
+productos = {'producto1': 20, 'producto2': 50, 'producto3': 15, 'producto4': 13, 'producto5': 45 }
 productos_seleccionados = {}
 #podria ser en un txt para que no se borre :O
 
@@ -67,8 +67,13 @@ def solicitar(productos, productos_seleccionados):
                         return
 
             #informamos del numero de stock disponible
-            productokey = list(productos.keys())[solicitud-1]
-            print(f'Existen {productos.get(productokey)} unidades de {productokey}\n')
+            try:
+                productokey = list(productos.keys())[solicitud-1]
+            except IndexError:
+                  print('Producto no existente, porfavor ingrese nuevamente')
+                  solicitar(productos, productos_seleccionados)
+            else:
+                print(f'Existen {productos.get(productokey)} unidades de {productokey}\n')
 
             if solicitud < 0:
                     #Por si ponen un numero negativo
@@ -93,15 +98,22 @@ def solicitar(productos, productos_seleccionados):
 
                 if cantidad > productos.get(productokey): print('No existe stock suficiente para su pedido, porfavor intentelo nuevamente.') #Verificar existencias del producto, si no hay, se devuelve mensaje para que insista en otro valor
                        
-                elif cantidad <= productos.get(productokey):maximo20(productos_seleccionados, cantidad); productos[productokey] -= cantidad; productos_seleccionados[productokey] = productos_seleccionados.get(productokey, 0) + cantidad # asi, si no existe, ahora existe y podemos sumarle, si lo hacemos solo con un productos_seleccionados[productokey] += cantidad, si no exsite en el diccionario, dará error con el key.
-
+                elif cantidad <= productos.get(productokey):
+                    if maximo20(productos_seleccionados, cantidad):
+                          continue
+                    else:
+                        productos[productokey] -= cantidad; productos_seleccionados[productokey] = productos_seleccionados.get(productokey, 0) + cantidad # asi, si no existe, ahora existe y podemos sumarle, si lo hacemos solo con un productos_seleccionados[productokey] += cantidad, si no exsite en el diccionario, dará error con el key.
 
 
 #crearemos una funcion que controle el maximo de unidades. Las variables que entran tiene el mismo nombre las cuales vamos a poner en la funcion, productos_seleccionados es un dict() y solicitud un int().
 def maximo20(productos_seleccionados, cantidad):
-    if sum(productos_seleccionados.values()) + cantidad > 20: print('\nNo se puede realizar esta operación, el carrito sobrepasaria el limite establecido. Max 20 unidades en total.'); return solicitar(productos, productos_seleccionados) #Si la cantidad que se desea ingresar al carrito sobrepasa las 20 unidades, indicamos que no se puede realizar la solicitud y retornmos a la funcion solicitar(productos_seleccionados) para que se siga añadiendo si se desea.
-    elif sum(productos_seleccionados.values()) + cantidad == 20: print('\nLe informamos que con la ultima adición se alcanzó el máximo de unidades por pedido') #si el productos_seleccionados tiene 20 unidades en total con la ultima adición, se entrega el ticket inmediatamente. 
-    elif sum(productos_seleccionados.values()) + cantidad < 20: return #si aun no se llega a 20 unidades en total, se da la opcion de seguir añadiendo, o apretar '0' para entregar ticket
+    if sum(productos_seleccionados.values()) + cantidad > 20: 
+        print('\nNo se puede realizar esta operación, el carrito sobrepasaria el limite establecido. Max 20 unidades en total.')
+        return 1 #Si la cantidad que se desea ingresar al carrito sobrepasa las 20 unidades, indicamos que no se puede realizar la solicitud y retornmos a la funcion solicitar(productos_seleccionados) para que se siga añadiendo si se desea.
+    elif sum(productos_seleccionados.values()) + cantidad == 20: 
+        print('\nLe informamos que con la ultima adición se alcanzó el máximo de unidades por pedido') #si el productos_seleccionados tiene 20 unidades en total con la ultima adición, se entrega el ticket inmediatamente.
+        return 0
+
 
 #Y otra para que me imprima el ticket con los productos y unidades seleccionadas.
 
