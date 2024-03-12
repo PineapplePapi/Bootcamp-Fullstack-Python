@@ -31,10 +31,12 @@ def stock(productos):
                     #Por si ponen un numero negativo
                     print()
                     print('Numero incorrecto, pruebe nuevamente.\n')
+                    continue
             elif producto > len(list(productos)):
                     #Por si ponen un numero mayor a los de la lista
                     print()
                     print('Producto no encontrado pruebe nuevamente o ingrese 0 para salir\n')
+                    continue
             else: 
                     #Numero correcto chin chin chin $$$$
                     productokey = list(productos.keys())[producto-1]
@@ -64,7 +66,7 @@ def solicitar(productos, productos_seleccionados):
                     if len(productos_seleccionados)>0:
                         return ticket(productos_seleccionados)
                     else:
-                        return
+                        continue
 
             #informamos del numero de stock disponible
             try:
@@ -96,13 +98,18 @@ def solicitar(productos, productos_seleccionados):
                 else:
                     cantidad = cantidad
 
-                if cantidad > productos.get(productokey): print('No existe stock suficiente para su pedido, porfavor intentelo nuevamente.') #Verificar existencias del producto, si no hay, se devuelve mensaje para que insista en otro valor
+                if cantidad > productos.get(productokey): 
+                    print('No existe stock suficiente para su pedido, porfavor intentelo nuevamente.\n')
+                    continue
+                #Verificar existencias del producto, si no hay, se devuelve mensaje para que insista en otro valor
                        
                 elif cantidad <= productos.get(productokey):
                     if maximo20(productos_seleccionados, cantidad):
-                          continue
+                        continue
                     else:
-                        productos[productokey] -= cantidad; productos_seleccionados[productokey] = productos_seleccionados.get(productokey, 0) + cantidad # asi, si no existe, ahora existe y podemos sumarle, si lo hacemos solo con un productos_seleccionados[productokey] += cantidad, si no exsite en el diccionario, dará error con el key.
+                        productos[productokey] -= cantidad; productos_seleccionados[productokey] = productos_seleccionados.get(productokey, 0) + cantidad
+                        continue
+                         # asi, si no existe, ahora existe y podemos sumarle, si lo hacemos solo con un productos_seleccionados[productokey] += cantidad, si no exsite en el diccionario, dará error con el key.
 
 
 #crearemos una funcion que controle el maximo de unidades. Las variables que entran tiene el mismo nombre las cuales vamos a poner en la funcion, productos_seleccionados es un dict() y solicitud un int().
