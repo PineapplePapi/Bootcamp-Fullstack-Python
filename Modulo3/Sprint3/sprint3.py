@@ -47,6 +47,10 @@ def numerotelefono(elemento):
         if (len(numero) > 8) or (len(numero) < 8): 
             print("Colocaste un número demasiado largo o corto, por favor ingrese su número de 8 dígitos nuevamente sin incluir su código de país (+569).")
             continue #corta la iteración actual y entra a una nueva
+        for n in numero:
+            if not n.isdigit():
+                print("Numero de telefono no puede contener letras, ingrese su numero nuevamente")
+                continue
         return numero
 
 
