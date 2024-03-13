@@ -13,9 +13,11 @@ def ingresarcontrasena():
     contrasena = input('Ingrese su contrasena: ')
 
 
+#La contrasena tiene que tener las siguientes condiciones
+condiciones = ['8 o mas caracteres', 'mayusculas', 'minusculas', 'cifras']
 
-def validacioncontrasena(contrasena):
-    validacion = []
-    if len(contrasena) < 8:
-        validacion.append('contrasena no cumple con el largo minimo')
-    if 
+def validacioncontrasena(contrasena, condiciones):
+    if len(contrasena) >= 8:
+        print(f'Su contrasena cumple y tiene {condiciones.pop('8 o mas caracteres')}')
+    if not any(letra.isupper() for letra in contrasena):
+        print(f'Su contrasena cumple y tiene {condiciones.pop('mayusculas')}')
