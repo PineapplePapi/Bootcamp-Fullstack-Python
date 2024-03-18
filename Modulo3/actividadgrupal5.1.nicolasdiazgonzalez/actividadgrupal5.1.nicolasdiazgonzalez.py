@@ -22,13 +22,13 @@ basededatos = [{
     "bufanda gris": ["Bufanda Gris", 1250, str(uuid.uuid4()), "Gris"],
     "sombrero rojo": ["Sombrero Rojo", 1999, str(uuid.uuid4()), "Rojo"]},
     {
-        
+       # O no entendimos el ejericio y agregar productos y usuarios era a la informacion de compra de los usuarios o nos equivocamos y anadimos productos y usuarios a los diccionarios de informacion de usuarios y productos, pero este diccionario destinado a informacion de compras de los usuarios no lo ocupamos 
     }]
 
 #MENU Y METODOS SIN FUCIONES >:c
 while True:
     #Menu para los diferentes requerimientos
-    eleccion = input('Seleccione el numero de la opcion que desea realizar: \n1. Agrege un cliente.\n2. Agrege un producto.\n3. Mostrar clientes.\n4. Mostrar productos.\n5. Eliminar un cliente al azar\n6. Eliminar ultimo producto agregado\n0. Ingrese 0 para salir.\n')
+    eleccion = input('Seleccione el numero de la opcion que desea realizar: \n1. Agrege un cliente.\n2. Agrege un producto.\n3. Mostrar clientes.\n4. Mostrar productos.\n5. Eliminar un cliente al azar\n6. Eliminar ultimo producto agregado\n6. Imprimir IDs de clientes.\n0. Ingrese 0 para salir.\n')
     if eleccion == '1':
         #Hay libertad para poner cualquier nombre
         nombre_completo = input("Ingrese el nombre completo del cliente: ")
@@ -97,6 +97,28 @@ while True:
             eliminado = basededatos[1].pop(eliminar)
             #Hacemos uso de la constante eliminado para imprimir sus datos.
             print(f"Información del producto eliminado:\nNombre: {eliminado[0]}\nPrecio: {eliminado[1]}\nID: {eliminado[2]}\nColor: {eliminado[3]}")
+    elif eleccion == '7':
+        #Si existen elementos usuarios en el diccionario, imprimira sus nombres y sus IDs
+        if basededatos[0]:
+            print (f'Nombres de los usuarios y sus IDs unicos: \n{'\n'.join((f'{usuario} : {idusuario[2]}' for usuario, idusuario in basededatos[0].items()))}\n')
+        else:
+            print("No hay usuarios registrados")
+    elif eleccion == '8':
+        #Cambiara los IDs de los usuarios existentes y les agregara _piloto e imprimira los usuarios con sus nuevos IDs
+        if basededatos[0]:
+            for cliente in basededatos[0].values():
+                cliente[2] += "_piloto"
+            print (f'Nombres de los usuarios y sus nuevo IDs unicos: \n{'\n'.join((f'{usuario} : {idusuario[2]}' for usuario, idusuario in basededatos[0].items()))}\n')
+    elif eleccion == '9':
+        #Primero se comprueba que existan mas de cuatro usuarios, y se les elimina sus IDs
+        if len(basededatos[0]) >= 4:
+            cuatroultimos = list(basededatos[0].values())[-4:]
+            for nombre, informacion in basededatos[0].items():
+                if informacion in cuatroultimos:
+                    informacion.pop()
+                    print(informacion)
+        else:
+            print('No existen usuarios suficientes para eliminar sus IDs')
     elif eleccion == '0':
         exit()
     else:
