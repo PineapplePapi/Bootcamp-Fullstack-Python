@@ -76,7 +76,7 @@ class control_ventas:
 
     def compra(self, id_cliente, id_producto, unidades=1):#Agregamos 1 porque es el minimo por requerimiento, aunque se puede cambiar.
         #Si existe el ID del cliente
-        if id_cliente in self.clientes:
+        if id_cliente in self.__cliente__e:
             #Instanciamos el stock en una variable utilizando la funcion stock_unidad() con el id del producto en self.bodega
             stock_disponible = self.__bodega__.stock_unidad(id_producto)
             #Si el stock_disponible existe y es igual o mayor a las unidades pedidas
@@ -98,6 +98,10 @@ class control_ventas:
         else:
             #Si no existe el ID, avisamos que no esta registrado
             return f'El cliente con ID {id_cliente} no esta registrado.'
+    #Creamo la funcion carrito y la hacemos property, con la finalidad de que se pueda usar en otras funciones, en este caso para imprimir_carrito
+    @property
+    def carrito(self):
+        return self.__carrito__
         
 
 #Instanciamos las clases a utilizar
@@ -174,7 +178,7 @@ def menu_ventas():
         print('\nMenu de Ventas:')
         print('1. Mostrar clientes registrados\n')
         print('2. Realizar compra\n')
-        print('3. Imprimir carrito')
+        print('3. Imprimir carrito\n')
         print('0. Volver al menu principal\n')
         opcion = input('Ingrese una opcion: \n')
 
