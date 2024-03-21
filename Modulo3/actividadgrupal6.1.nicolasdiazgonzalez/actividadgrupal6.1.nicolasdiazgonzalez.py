@@ -76,7 +76,7 @@ class control_ventas:
 
     def compra(self, id_cliente, id_producto, unidades=1):#Agregamos 1 porque es el minimo por requerimiento, aunque se puede cambiar.
         #Si existe el ID del cliente
-        if id_cliente in self.__cliente__e:
+        if id_cliente in self.__cliente__:
             #Instanciamos el stock en una variable utilizando la funcion stock_unidad() con el id del producto en self.bodega
             stock_disponible = self.__bodega__.stock_unidad(id_producto)
             #Si el stock_disponible existe y es igual o mayor a las unidades pedidas
