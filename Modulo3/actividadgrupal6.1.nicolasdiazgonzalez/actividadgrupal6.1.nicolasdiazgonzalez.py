@@ -23,7 +23,7 @@ class bodega:
             return 'El producto ya existe, utiliza ACTUALIZAR STOCK'
 
     def actualizar_stock(self, id_producto, cantidad):
-        #Comprobamos que exista y si existe, podremos actualizar stock
+        #Comprobamos que exista y si existe, podremos actualizar stock con numero positivos y negativos
         if id_producto in self.__stock__:
             self.__stock__[id_producto]['cantidad'] += cantidad
         else:
@@ -149,7 +149,7 @@ def menu_bodega():
         elif eleccion == '2':
             #Para actualizar stock, pedimos los datos requeridos, ID y cantidad
             id_producto = input('Ingrese el ID del producto: \n')
-            cantidad = int(input('Ingrese la cantidad a actualizar: \n'))
+            cantidad = int(input('Ingrese la cantidad a actualizar (positivo o negativo): \n'))
             #A la variable instanciada, le anadimos la funcion actualizar_stock con los inputs pedidos.
             labodega.actualizar_stock(id_producto, cantidad)
         elif eleccion == '3':
